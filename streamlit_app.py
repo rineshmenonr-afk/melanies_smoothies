@@ -53,12 +53,8 @@ if ingredients_list:
         ingredients_string += fruit_chosen + " "
 
         # Find the SEARCH_ON value
-        search_on = (
-            my_dataframe
-            .filter(col("FRUIT_NAME") == fruit_chosen)
-            .select("SEARCH_ON")
-            .collect()[0]["SEARCH_ON"]
-        )
+        search_on=pd_df.loc[pd_df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON'].iloc[0]
+        st.write('The search value for ', fruit_chosen,' is ', search_on, '.')
 
         # Call SmoothieFroot API
         smoothiefroot_response = requests.get(
