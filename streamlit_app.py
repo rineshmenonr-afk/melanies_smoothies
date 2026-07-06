@@ -62,10 +62,7 @@ if ingredients_list:
         st.success(f"Your Smoothie is ordered, {nameoftheorder}!", icon="✅")
         
         
-  import requests  
-      
-
-
+import requests
 
 
 
