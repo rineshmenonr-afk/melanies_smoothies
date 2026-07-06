@@ -18,6 +18,11 @@ my_dataframe = (
     .select(col("FRUIT_NAME"), col("SEARCH_ON"))
 )
 
+# Convert the Snowpark Dataframe to a Pa
+pd_df=my_dataframe.to_pandas()
+st.dataframe(pd_df)
+st.stop()
+
 # Display available fruits
 st.dataframe(my_dataframe, use_container_width=True)
 
